@@ -1,0 +1,16 @@
+venv=~/python3_venv
+
+. $venv/bin/activate
+
+rm -rf $venv/lib/python3*/site-packages/carmcmc*
+rm -rf src/{build,carmcmc.egg-info,dist,carmcmc/__pycache__,carmcmc/_carmcmc.cpython*.so}
+
+sudo apt install libarmadillo-dev libboost-numpy-dev libboost-python-dev libboost-system-dev libboost-filesystem-dev python3-pip libboost-timer-dev
+
+pip3 install matplotlib scipy setuptools
+
+cd src
+pip3 install . -v
+
+cd ..
+echo 'import carmcmc; print("whee");' | python3
