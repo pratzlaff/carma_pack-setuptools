@@ -1003,7 +1003,7 @@ class Car1Sample(CarmaSample):
         omegasq = np.exp(log_omegas) ** 2
         for i in range(nfreq):
             denom = omegasq + (2. * np.pi * frequencies[i]) ** 2
-            psd_samples = numer / denom
+            psd_samples = np.squeeze(numer / denom)
 
             # Now compute credibility interval for power spectrum
             psd_credint[i, 0] = np.percentile(psd_samples, lower, axis=0)
