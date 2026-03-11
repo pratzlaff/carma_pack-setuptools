@@ -5,7 +5,10 @@ venv=~/python3_venv
 rm -rf $venv/lib/python3*/site-packages/carmcmc*
 rm -rf src/{build,carmcmc.egg-info,dist,carmcmc/__pycache__,carmcmc/_carmcmc.cpython*.so}
 
-sudo apt install libarmadillo-dev libboost-numpy-dev libboost-python-dev libboost-system-dev libboost-filesystem-dev python3-pip libboost-timer-dev
+#sudo apt install libarmadillo-dev libboost-numpy-dev libboost-python-dev libboost-system-dev libboost-filesystem-dev python3-pip libboost-timer-dev libboost-python1.88-dev libboost-timer1.88-dev libboost-system1.88-dev libboost-filesystem1.88-dev
+
+# currently in Ubuntu 26.04, libboost-numpy-dev pulls in libboost-numpy1.88, and libboost-system-dev isn't pulling in libboost-system1.90-dev
+sudo apt install libarmadillo-dev libboost-numpy-dev python3-pip libboost-python1.88-dev libboost-timer1.88-dev libboost-system1.88-dev libboost-filesystem1.88-dev
 
 pip3 install matplotlib scipy setuptools
 
