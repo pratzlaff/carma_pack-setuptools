@@ -262,7 +262,7 @@ class MCMCSample(object):
         # Also a note: this does not work if the outer contour is not
         # fully connected.
         if doPlotStragglers:
-            outer = cont.collections[0]._paths
+            outer = cont.get_paths()
             sx = []
             sy = []
             for i in range(npts):
